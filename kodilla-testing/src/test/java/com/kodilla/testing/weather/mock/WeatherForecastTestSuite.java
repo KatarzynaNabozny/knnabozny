@@ -19,6 +19,7 @@ public class WeatherForecastTestSuite {
     //    private static Map<String, Double> temperaturesMap = new HashMap<>();
     private static Map<String, Double> temperaturesMap;
 
+
     @Mock
     private static Temperatures temperaturesMock;
 
@@ -70,3 +71,4 @@ public class WeatherForecastTestSuite {
     }
 
 }
+

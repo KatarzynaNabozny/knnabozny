@@ -4,12 +4,15 @@ public class Book {
     private final String author;
     private final String title;
     private final int yearOfPublication;
+    private final String signature;
 
-    public Book(final  String author, final String title, final int yearOfPublication) {
+
+
+    public Book(final  String author, final String title, final int yearOfPublication,final String signature) {
         this.title = title;
         this.author = author;
         this.yearOfPublication = yearOfPublication;
-
+        this.signature = signature;
     }
 
     public String getTitle() {
@@ -23,12 +26,17 @@ public class Book {
     public int getYearOfPublication() {
         return yearOfPublication;
     }
+
+    public String getSignature() {
+        return signature;
+    }
+
     @Override
     public String toString() {
         return "Book{" +
                 "author='" + author + '\'' +
                 ", title='" + title + '\'' +
-                ", yearOfPublication=" + yearOfPublication +
+                ", yearOfPublication=" + yearOfPublication +",signature='" + signature + '\'' +
                 '}';
     }
 }

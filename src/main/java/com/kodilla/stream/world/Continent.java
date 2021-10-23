@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Continent {
-    private List<Country> countries = new ArrayList<>();
+    private List<Country> countries;
 
     public List<Country> getCountries() {
         return countries;

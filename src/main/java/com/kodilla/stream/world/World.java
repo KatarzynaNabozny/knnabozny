@@ -1,11 +1,10 @@
 package com.kodilla.stream.world;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
 
 public class World {
-    List<Continent> continents = new ArrayList<>();
+    List<Continent> continents;
 
     public World(List<Continent> continents) {
         this.continents = continents;

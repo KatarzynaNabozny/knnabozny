@@ -30,7 +30,7 @@ public class WorldTestSuite {
         BigDecimal expectedPeopleQuantity = new BigDecimal("153000000");
         assertEquals(expectedPeopleQuantity, peopleQuantity);
     }
-    }
+}
     //Napisz test testGetPeopleQuantity(),
     // który przetestuje czy metoda getPeopleQuantity() klasy World
     // działa prawidłowo.

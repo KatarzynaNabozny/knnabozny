@@ -63,7 +63,7 @@ public class WeatherForecastTestSuite {
     void medianTemperaturesWithMock() {
         //Given
         WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
-        double expMedianTemperature = 25.5;
+        double expMedianTemperature = 25.2;
         //When
         double result = weatherForecast.medianTemperatures();
         //Then

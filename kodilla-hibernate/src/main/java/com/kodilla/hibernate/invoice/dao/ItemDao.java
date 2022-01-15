@@ -7,7 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 
 @Transactional
 @Repository
-public interface ItemDao extends CrudRepository<Item,Integer> {
+public interface ItemDao extends CrudRepository<Item, Integer> {
 }
 
 

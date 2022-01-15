@@ -2,21 +2,21 @@ package com.kodilla.hibernate.invoice;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "PRODUCTS")
-public final class Product {
-    private int id;
-    private String name;
-    private List<Item> items = new ArrayList<>();
+@Table(name = "INVOICES")
+public final class Invoice {
+    int ide;
+    String number;
+    List<Item> items;
 
-    public Product() {
+    public Invoice(String number, List<Item> items) {
+        this.number = number;
+        this.items = items;
     }
 
-    public Product( String name) {
-        this.name = name;
+    public Invoice() {
     }
 
     @Id
@@ -24,27 +24,28 @@ public final class Product {
     @NotNull
     @Column(name = "ID", unique = true)
     public int getId() {
-        return id;
+        return ide;
     }
 
     private void setId(int id) {
-        this.id = id;
+        this.ide = id;
     }
 
     @NotNull
-    @Column(name = "NAME")
-    public String getName() {
-        return name;
+    @Column(name = "NUMBER")
+    public String getNumber() {
+        return number;
     }
 
-    private void setName(String name) {
-        this.name = name;
+    private void setNumber(String number) {
+        this.number = number;
     }
+
 
     @OneToMany(
             targetEntity = Item.class,
-            mappedBy = "product",
-            cascade = CascadeType.ALL,
+            mappedBy = "invoice",
+            cascade = CascadeType.MERGE,
             fetch = FetchType.LAZY
     )
     public List<Item> getItems() {
@@ -54,4 +55,5 @@ public final class Product {
     public void setItems(List<Item> items) {
         this.items = items;
     }
+
 }

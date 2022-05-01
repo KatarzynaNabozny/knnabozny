@@ -9,6 +9,11 @@ import java.util.List;
         query = "SELECT * FROM COMPANIES WHERE SUBSTRING(COMPANY_NAME,1,3) = :COMPANY_NAME_FIRST_LETTERS",
         resultClass = Company.class
 )
+
+@NamedQuery(
+        name = "Company.contains",
+        query = "FROM Company WHERE name LIKE :FRAGMENT"
+)
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
@@ -23,7 +28,7 @@ public class Company {
     public Company(String name) {
         this.name = name;
     }
-@ManyToMany(cascade = CascadeType.ALL,mappedBy = "companies")
+    @ManyToMany(cascade = CascadeType.ALL,mappedBy = "companies")
     public List<Employee> getEmployees() {
         return employees;
     }

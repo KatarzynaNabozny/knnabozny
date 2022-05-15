@@ -5,9 +5,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-public enum DbManager {
+public class DbManager {
 
-    INSTANCE;
+    private  static DbManager dbManagerInstance;
 
     private Connection conn;
 
@@ -27,7 +27,10 @@ public enum DbManager {
     }
 
     public static DbManager getInstance() {
-        return INSTANCE;
+        if(dbManagerInstance == null){
+            dbManagerInstance = new DbManager();
+        }
+        return dbManagerInstance;
     }
 
     public Connection getConnection() {
